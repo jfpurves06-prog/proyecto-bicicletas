@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ola &amp; Roca — Alquiler de bicicletas en Lanzarote</title>
+<meta name="description" content="Alquiler de bicicletas en Lanzarote. Eléctricas, de paseo, BTT e infantiles. Recogida en la costa, reserva en minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="nav__brand">OLA <span>&amp;</span> ROCA</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#flota">Flota</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#reservas" class="btn btn--ghost">Reservar</a>
+        <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero__cloud hero__cloud--1"></div>
+    <div class="hero__cloud hero__cloud--2"></div>
+    <div class="hero__cloud hero__cloud--3"></div>
+
+    <div class="wrap hero__content">
+      <div class="hero__eyebrow eyebrow">Alquiler de bicicletas · Lanzarote</div>
+      <h1 class="hero__title">Pedalea donde el <em>volcán</em> se encuentra con el mar.</h1>
+      <p class="hero__sub">Bicis listas para la costa, los pueblos blancos y los caminos de malpaís de la isla. Recoges en Puerto del Carmen y devuelves donde más te convenga.</p>
+      <div class="hero__actions">
+        <a href="#reservas" class="btn btn--solid">Reservar mi bici</a>
+        <a href="#flota" class="hero__link">Ver la flota →</a>
+      </div>
+    </div>
+
+    <!-- Signature: volcanic ridge + whitewashed village on the coast -->
+    <div class="horizon">
+      <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Silueta de la costa volcánica de Lanzarote">
+        <!-- far volcanic ridge -->
+        <path d="M0,220 L0,140 L70,118 L140,150 L230,86 L320,128 L400,76 L490,132 L580,92 L660,142 L760,100 L850,150 L950,84 L1050,134 L1150,96 L1260,146 L1350,108 L1440,140 L1440,220 Z" fill="#0F3142" opacity="0.55"/>
+        <!-- near volcanic ridge -->
+        <path d="M0,220 L0,178 L90,160 L190,184 L300,150 L420,182 L540,158 L650,188 L770,164 L900,190 L1020,160 L1150,186 L1280,166 L1440,184 L1440,220 Z" fill="var(--volcanic)"/>
+        <!-- whitewashed coastal village sitting on the near ridge -->
+        <g fill="var(--cream)">
+          <rect x="640" y="148" width="34" height="22" />
+          <rect x="682" y="156" width="26" height="20" />
+          <rect x="716" y="146" width="40" height="26" />
+          <rect x="764" y="158" width="22" height="18" />
+          <rect x="794" y="150" width="30" height="22" />
+        </g>
+        <g fill="var(--deepsea)">
+          <rect x="648" y="154" width="8" height="6" />
+          <rect x="689" y="162" width="6" height="6" />
+          <rect x="730" y="153" width="8" height="6" />
+          <rect x="770" y="163" width="6" height="6" />
+          <rect x="803" y="156" width="7" height="6" />
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE NOSOTROS ============ -->
+  <section class="section section--cream" id="nosotros">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="eyebrow">Sobre nosotros</div>
+        <h2>Una furgoneta prestada, tres bicis y muchas ganas de <em>pedalear</em>.</h2>
+      </div>
+
+      <div class="nosotros">
+        <div class="nosotros__copy reveal">
+          <p>Empezamos en 2014 alquilando bicis a los turistas que bajaban hacia la Playa Grande, con tres bicis de segunda mano y una furgoneta que nos prestó un vecino. Hoy seguimos siendo un negocio familiar, pero conocemos cada sendero de lava, cada bajada al mar y cada bar donde para un ciclista con sed.</p>
+          <p>Revisamos cada bicicleta a mano antes de cada alquiler, porque el viento de Lanzarote no perdona una rueda floja ni unos frenos cansados. Y si te pierdes entre el malpaís, nuestro número está guardado en cada manillar.</p>
+          <div class="nosotros__stats">
+            <div class="stat">
+              <div class="stat__num">11</div>
+              <div class="stat__label">años rodando por la isla</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">45</div>
+              <div class="stat__label">bicicletas en la flota</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">12</div>
+              <div class="stat__label">puntos de recogida en la costa</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nosotros__art reveal">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de una bicicleta frente al mar">
+            <rect width="360" height="220" fill="var(--volcanic)"/>
+            <path d="M0,170 Q90,150 180,168 T360,158 L360,220 L0,220 Z" fill="var(--turquoise-deep)" opacity="0.5"/>
+            <path d="M0,185 Q90,168 180,182 T360,176 L360,220 L0,220 Z" fill="var(--turquoise)"/>
+            <circle cx="300" cy="48" r="26" fill="var(--sand)"/>
+            <g stroke="var(--cream)" stroke-width="3" fill="none" stroke-linecap="round">
+              <circle cx="95" cy="155" r="26"/>
+              <circle cx="205" cy="155" r="26"/>
+              <path d="M95,155 L140,108 L175,108 L205,155"/>
+              <path d="M140,108 L120,155"/>
+              <path d="M175,108 L185,92 L210,92"/>
+            </g>
+          </svg>
+          <p class="nosotros__quote">"No alquilamos bicicletas. Prestamos la manera más bonita de conocer la isla."<span>— Marta, fundadora</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOTA / PRODUCTOS ============ -->
+  <section class="section section--dim" id="flota">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="eyebrow">Nuestros productos</div>
+        <h2>Cuatro maneras de moverte por la <em>isla</em>.</h2>
+      </div>
+
+      <div class="flota__grid">
+
+        <div class="card reveal">
+          <svg class="card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M26 4 14 26h10l-4 18 16-24H26z"/></svg>
+          <h3>Eléctrica</h3>
+          <p class="card__tag">Para subir a Femés sin despeinarte.</p>
+          <div class="card__price">25€ <small>/ día</small></div>
+          <div class="card__specs">Motor Bosch · Autonomía 60 km · Cambio automático</div>
+        </div>
+
+        <div class="card reveal">
+          <svg class="card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="34" r="8"/><circle cx="36" cy="34" r="8"/><path d="M14 34 22 16h8M22 16h8l6 18M22 16l-4 0"/><path d="M28 22h10"/></svg>
+          <h3>Paseo / Urbana</h3>
+          <p class="card__tag">Ligera, con cesta, lista para la playa.</p>
+          <div class="card__price">12€ <small>/ día</small></div>
+          <div class="card__specs">Cesta delantera · Sillín cómodo · Cambio Shimano 7v</div>
+        </div>
+
+        <div class="card reveal">
+          <svg class="card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="36" r="7"/><circle cx="36" cy="36" r="7"/><path d="M12 36 20 18h6l10 18M20 18l6 0M6 8h6l4 10"/></svg>
+          <h3>Montaña (BTT)</h3>
+          <p class="card__tag">Para los caminos de lava y malpaís.</p>
+          <div class="card__price">18€ <small>/ día</small></div>
+          <div class="card__specs">Suspensión delantera · Neumáticos todoterreno · Frenos de disco</div>
+        </div>
+
+        <div class="card reveal">
+          <svg class="card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="36" r="6"/><circle cx="24" cy="36" r="6"/><circle cx="38" cy="36" r="6"/><path d="M10 36 18 20h6l6 16M18 20h6l8 16"/></svg>
+          <h3>Infantil / Tándem</h3>
+          <p class="card__tag">Para rodar en familia, a cualquier ritmo.</p>
+          <div class="card__price">10€ <small>/ día</small></div>
+          <div class="card__specs">Tallas desde 4 años · Tándem disponible · Sillas de bebé opcionales</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVAS ============ -->
+  <section class="section reservas" id="reservas">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="eyebrow">Reservas</div>
+        <h2>Resérvala hoy, <em>recógela</em> mañana.</h2>
+        <p>Cancelación gratuita hasta 24h antes. Confirmamos por WhatsApp en cuestión de minutos.</p>
+      </div>
+
+      <div class="reservas__grid">
+        <div class="reveal">
+          <form class="form-reservas" id="reservaForm">
+            <div class="field--row">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+            </div>
+
+            <div class="field--row">
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required>
+              </div>
+              <div class="field">
+                <label for="punto">Punto de recogida</label>
+                <select id="punto" name="punto" required>
+                  <option value="">Selecciona uno</option>
+                  <option>Puerto del Carmen</option>
+                  <option>Playa Blanca</option>
+                  <option>Costa Teguise</option>
+                  <option>Arrecife</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field--row">
+              <div class="field">
+                <label for="fechaInicio">Fecha de recogida</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" required>
+              </div>
+              <div class="field">
+                <label for="fechaFin">Fecha de devolución</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+              </div>
+            </div>
+
+            <div class="field--row">
+              <div class="field">
+                <label for="tipo">Tipo de bicicleta</label>
+                <select id="tipo" name="tipo" required>
+                  <option value="">Selecciona una</option>
+                  <option>Eléctrica</option>
+                  <option>Paseo / Urbana</option>
+                  <option>Montaña (BTT)</option>
+                  <option>Infantil / Tándem</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cantidad">Número de bicis</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="20" value="1" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Necesitas sillas de bebé, un casco extra...?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--sand form-reservas__submit">Enviar solicitud de reserva</button>
+          </form>
+
+          <div class="reservas__confirm" id="reservaConfirm"></div>
+        </div>
+
+        <aside class="reservas__side">
+          <h3>Contacto directo</h3>
+          <div class="reservas__contact">
+            <a href="https://wa.me/34600000000" target="_blank" rel="noopener">WhatsApp: +34 600 000 000<small>Respuesta rápida, también fuera de horario</small></a>
+            <a href="mailto:hola@olayroca.com">hola@olayroca.com<small>Para grupos y reservas de varios días</small></a>
+            <a href="#">Avenida de las Playas 14, Puerto del Carmen<small>Lanzarote, Islas Canarias</small></a>
+          </div>
+          <div class="reservas__hours">
+            Todos los días, 9:00 – 19:00<br>
+            Recogida fuera de horario disponible bajo petición.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">OLA <span>&amp;</span> ROCA</div>
+          <p>Alquiler de bicicletas en Lanzarote. Bicis revisadas a mano, recogida en toda la costa y rutas que conocemos como la palma de la mano.</p>
+        </div>
+        <div>
+          <h4>Navegación</h4>
+          <div class="footer__list">
+            <a href="#nosotros">Sobre nosotros</a>
+            <a href="#flota">Flota</a>
+            <a href="#reservas">Reservas</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <div class="footer__list">
+            <a href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a>
+            <a href="mailto:hola@olayroca.com">hola@olayroca.com</a>
+            <a href="#">Puerto del Carmen, Lanzarote</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Ola &amp; Roca · Alquiler de bicicletas en Lanzarote</span>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
