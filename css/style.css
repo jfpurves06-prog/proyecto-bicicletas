@@ -273,6 +273,7 @@
   }
   .section--cream{ background: var(--cream); }
   .section--dim{ background: var(--cream-dim); }
+
   .section__head{
     max-width: 640px;
     margin-bottom: 64px;
@@ -359,11 +360,10 @@
     background:
       linear-gradient(to bottom,
         var(--cream-dim) 0%,
-        rgba(241,234,218,0.55) 18%,
-        rgba(241,234,218,0.55) 82%,
-        var(--cream-dim) 100%
+        transparent 220px
       ),
-      url('../img/Foto Portada.jpeg') center / cover no-repeat;
+      url('../img/Foto Portada.jpeg') center bottom / cover no-repeat;
+    image-rendering: auto;
   }
   .flota-section .wrap{
     position: relative;
@@ -639,20 +639,14 @@
     visibility: hidden;
     pointer-events: none;
   }
-  .loader-logo{
-    font-family: var(--body);
-    font-weight: 900;
-    font-size: 52px;
-    letter-spacing: 0.06em;
-    color: var(--volcanic);
-    display:flex;
-    align-items:center;
-    gap: 14px;
+  .loader-bike{
+    width: 220px;
+    height: auto;
   }
-  .loader-logo svg{
-    width: 52px;
-    height: 52px;
-    color: var(--volcanic);
+  .loader-spoke{
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spin-wheel 0.9s linear infinite;
   }
   .loader-bar-wrap{
     width: 260px;
@@ -671,6 +665,10 @@
   @keyframes loader-fill{
     0%  { width: 0%; }
     100%{ width: 100%; }
+  }
+  @keyframes spin-wheel{
+    from{ transform: rotate(0deg); }
+    to  { transform: rotate(360deg); }
   }
 
   /* ============ FOOTER ============ */

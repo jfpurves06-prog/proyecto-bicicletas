@@ -14,10 +14,56 @@
 
   <!-- ============ LOADING SCREEN ============ -->
   <div class="loader-overlay" id="loaderOverlay">
-    <div class="loader-logo">
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="8"/><circle cx="36" cy="34" r="8"/><path d="M12 34 20 16h10M20 16h10l6 18M20 16l-4 0"/><path d="M28 22h8"/></svg>
-      EASYBIKE
-    </div>
+    <svg class="loader-bike" viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Rueda trasera -->
+      <circle cx="60" cy="128" r="38" stroke="#14130F" stroke-width="3"/>
+      <circle cx="60" cy="128" r="5" fill="#14130F"/>
+      <g class="loader-spoke loader-spoke--rear">
+        <line x1="60" y1="90"  x2="60"  y2="166" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="22" y1="128" x2="98"  y2="128" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="33" y1="101" x2="87"  y2="155" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="87" y1="101" x2="33"  y2="155" stroke="#14130F" stroke-width="1.8"/>
+      </g>
+
+      <!-- Rueda delantera -->
+      <circle cx="200" cy="128" r="38" stroke="#14130F" stroke-width="3"/>
+      <circle cx="200" cy="128" r="5" fill="#14130F"/>
+      <g class="loader-spoke loader-spoke--front">
+        <line x1="200" y1="90"  x2="200" y2="166" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="162" y1="128" x2="238" y2="128" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="173" y1="101" x2="227" y2="155" stroke="#14130F" stroke-width="1.8"/>
+        <line x1="227" y1="101" x2="173" y2="155" stroke="#14130F" stroke-width="1.8"/>
+      </g>
+
+      <!-- Chasis: vainas inferiores (BB → eje trasero) -->
+      <line x1="105" y1="128" x2="60"  y2="128" stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <!-- Tubo del asiento (BB → cabeza del sillín) -->
+      <line x1="105" y1="128" x2="88"  y2="68"  stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <!-- Vaina trasera (sillín → eje trasero) -->
+      <line x1="88"  y1="68"  x2="60"  y2="128" stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <!-- Tubo diagonal (BB → tubo de dirección) -->
+      <line x1="105" y1="128" x2="172" y2="83"  stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <!-- Tubo superior (sillín → tubo de dirección) -->
+      <line x1="88"  y1="68"  x2="170" y2="68"  stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <!-- Tubo de dirección -->
+      <line x1="170" y1="68"  x2="172" y2="83"  stroke="#14130F" stroke-width="4.5" stroke-linecap="round"/>
+      <!-- Horquilla (dirección → eje delantero) -->
+      <line x1="172" y1="83"  x2="200" y2="128" stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Sillín -->
+      <line x1="88"  y1="68"  x2="88"  y2="60"  stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="72"  y1="58"  x2="106" y2="58"  stroke="#14130F" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Manillar -->
+      <line x1="170" y1="68"  x2="165" y2="54"  stroke="#14130F" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="158" y1="52"  x2="174" y2="52"  stroke="#14130F" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Pedalier -->
+      <circle cx="105" cy="128" r="5" fill="#14130F"/>
+      <line x1="93"  y1="128" x2="117" y2="128" stroke="#14130F" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
     <div class="loader-bar-wrap">
       <div class="loader-bar"></div>
     </div>
@@ -78,8 +124,8 @@
 
       <div class="nosotros">
         <div class="nosotros__copy reveal">
-          <p>Fundada en el año 2020, en plena Avenida de las Playas de Puerto del Carmen, nuestra empresa nació con un propósito claro: ofrecer a locales y visitantes una forma sostenible, saludable y emocionante de descubrir la magia de Lanzarote.</p>
-          <p>Comenzamos esta aventura con apenas unas pocas bicicletas y mucha ilusión. Hoy en día, gracias a la confianza de nuestros clientes, contamos con una flota de más de 80 bicis de varios tipos, convirtiéndonos en el punto de encuentro de referencia para los amantes de las dos ruedas. Ubicados estratégicamente en el corazón marítimo de Puerto del Carmen, ofrecemos acceso directo al espectacular paseo litoral y a las rutas ciclistas más impresionantes de la isla.</p>
+          <p>Fundada en el año <strong>2020</strong>, en plena <strong>Avenida de las Playas de Puerto del Carmen</strong>, nuestra empresa nació con un propósito claro: ofrecer a locales y visitantes una forma sostenible, saludable y emocionante de descubrir la magia de Lanzarote.</p>
+          <p>Comenzamos esta aventura con apenas unas pocas bicicletas y mucha ilusión. Hoy en día, gracias a la confianza de nuestros clientes, <strong>contamos con una flota de más de 80 bicis de varios tipos</strong>, convirtiéndonos en el punto de encuentro de referencia para los amantes de las dos ruedas. Ubicados estratégicamente en el corazón marítimo de Puerto del Carmen, ofrecemos acceso directo al espectacular paseo litoral y a las rutas ciclistas más impresionantes de la isla.</p>
           <div class="nosotros__stats">
             <div class="stat">
               <div class="stat__num">6</div>
@@ -110,7 +156,7 @@
       <div class="section__head reveal">
         <div class="eyebrow">Nuestros productos</div>
         <h2>Maneras de moverte por la <em>isla</em>.</h2>
-        <p>No hay nada como la libertad de recorrer cada rincón sobre dos o cuatro ruedas. Ya sea que busques aventura, desconexión o simplemente una forma genial de moverte, aquí tienes las diferentes maneras de explorar la isla.</p>
+        <p>No hay nada como la libertad de recorrer cada rincón sobre dos o cuatro ruedas. Ya sea que busques aventura, desconexión o simplemente una forma genial de moverte, aquí tienes las <strong>diferentes maneras de explorar la isla</strong>.</p>
       </div>
 
       <div class="flota__grid">
@@ -119,7 +165,7 @@
         <div class="card reveal">
           <img src="img/bicicleta electrica.jpeg" alt="Bicicleta eléctrica" class="card__img">
           <h3>Eléctrica</h3>
-          <p class="card__tag">Motor Bosch · Autonomía 60 km · Cambio automático</p>
+          <p class="card__tag">Para moverte sin sudar una gota.</p>
           <div class="card__tarifa">
             <div class="tarifa-row"><span>1 día</span><span class="tarifa-price">25€</span></div>
             <div class="tarifa-row"><span>3 días</span><span class="tarifa-price">66€</span></div>
@@ -132,7 +178,6 @@
         <div class="card reveal">
           <img src="img/BICI.jpg" alt="Bicicleta de paseo y montaña" class="card__img">
           <h3>Paseo / Montaña</h3>
-          <p class="card__tag">Cesta delantera · Sillín cómodo · Cambio Shimano 7v</p>
           <div class="card__tarifa">
             <div class="tarifa-row"><span>1 hora</span><span class="tarifa-price">5€</span></div>
             <div class="tarifa-row"><span>2 horas</span><span class="tarifa-price">6€</span></div>
@@ -149,7 +194,7 @@
         <div class="card reveal">
           <img src="img/carrito.jpeg" alt="Carrito" class="card__img">
           <h3>Carritos</h3>
-          <p class="card__tag">Vehículos eléctricos y de gasolina para toda la familia</p>
+          <p class="card__tag">Carritos de 2 a 4 personas con opción a eléctrico.</p>
           <div class="card__tarifa">
             <div class="tarifa-section">Sport <small>(3 personas + 2 niños)</small></div>
             <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">15€</span></div>
@@ -168,7 +213,7 @@
         <div class="card reveal">
           <img src="img/Go kart.jpeg" alt="Go kart infantil" class="card__img">
           <h3>Kids</h3>
-          <p class="card__tag">Diversión garantizada para los más pequeños</p>
+          <p class="card__tag">Go kart con pedales para niños.</p>
           <div class="card__tarifa">
             <div class="tarifa-section">Go Kart Junior</div>
             <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">10€</span></div>
@@ -189,12 +234,11 @@
       <div class="section__head reveal">
         <div class="eyebrow">Reseñas</div>
         <h2>Lo que dicen nuestros <em>clientes</em>.</h2>
-        <p>Más de 200 reseñas en Google. Lee lo que opinan quienes ya han pedaleado con nosotros.</p>
         <div class="rating-summary">
-          <span class="rating-summary__score">4.9</span>
+          <span class="rating-summary__score">4.6</span>
           <div class="rating-summary__right">
             <div class="rating-summary__stars">★★★★★</div>
-            <div class="rating-summary__label">Media en Google · +200 reseñas</div>
+            <div class="rating-summary__label">Media en Google · 43 reseñas</div>
           </div>
         </div>
       </div>
@@ -359,19 +403,15 @@
           <div class="ubicacion__info">
             <div class="ubicacion__dato">
               <strong>Dirección</strong>
-              <span>Avenida de las Playas, Puerto del Carmen<br>Lanzarote, Islas Canarias</span>
+              <span>Av. de las Playas, 100A<br>35510 Tías, Las Palmas</span>
             </div>
             <div class="ubicacion__dato">
               <strong>Horario</strong>
-              <span>Todos los días · 9:00 – 19:00</span>
+              <span>Lunes a sábado · 9:30 – 18:00<br>Domingos cerrado</span>
             </div>
             <div class="ubicacion__dato">
               <strong>Teléfono</strong>
               <span><a href="tel:+34667210728">667 210 728</a></span>
-            </div>
-            <div class="ubicacion__dato">
-              <strong>Email</strong>
-              <span><a href="mailto:hola@olayroca.com">hola@olayroca.com</a></span>
             </div>
             <a href="https://www.google.com/maps/search/EasyBike+Lanzarote" target="_blank" rel="noopener" class="btn btn--solid" style="margin-top:8px;">Cómo llegar →</a>
           </div>
@@ -401,7 +441,6 @@
           <h4>Contacto</h4>
           <div class="footer__list">
             <a href="tel:+34667210728">667 210 728</a>
-            <a href="mailto:hola@olayroca.com">hola@olayroca.com</a>
             <a href="#">Puerto del Carmen, Lanzarote</a>
           </div>
         </div>
