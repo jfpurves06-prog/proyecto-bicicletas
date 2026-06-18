@@ -12,10 +12,24 @@
 </head>
 <body>
 
+  <!-- ============ LOADING SCREEN ============ -->
+  <div class="loader-overlay" id="loaderOverlay">
+    <div class="loader-logo">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="8"/><circle cx="36" cy="34" r="8"/><path d="M12 34 20 16h10M20 16h10l6 18M20 16l-4 0"/><path d="M28 22h8"/></svg>
+      EASYBIKE
+    </div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
   <!-- ============ NAV ============ -->
   <header class="nav">
     <div class="wrap">
-      <a href="#top" class="nav__brand">OLA <span>&amp;</span> ROCA</a>
+      <a href="#top" class="nav__brand">
+        <svg class="nav__bike-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="8"/><circle cx="36" cy="34" r="8"/><path d="M12 34 20 16h10M20 16h10l6 18M20 16l-4 0"/><path d="M28 22h8"/></svg>
+        EASYBIKE
+      </a>
       <nav class="nav__links" id="navLinks">
         <a href="#nosotros">Sobre nosotros</a>
         <a href="#flota">Flota</a>
@@ -23,7 +37,7 @@
         <a href="#ubicacion">Ubicación</a>
       </nav>
       <div class="nav__actions">
-        <a href="#resenas" class="btn btn--ghost">Reseñas</a>
+        <a href="tel:+34667210728" class="btn btn--ghost">Reservar</a>
         <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
         </button>
@@ -38,10 +52,10 @@
 
     <div class="wrap hero__content">
       <div class="hero__eyebrow eyebrow">Alquiler de bicicletas · Lanzarote</div>
+      <div class="hero__brand-name">EASYBIKE</div>
       <h1 class="hero__title">Pedalea donde el <em>volcán</em> se encuentra con el mar.</h1>
-      <p class="hero__sub">Tu ruta por la isla empieza aquí. Bicicletas preparadas para descubrir el litoral, el encanto de los pueblos blancos y el paisaje volcánico. Recoge y devuelves tu bici cómodamente en nuestra sede de Puerto del Carmen.</p>
-      <div class="hero__actions">
-        <a href="#reservas" class="btn btn--solid">Reservar mi bici</a>
+<div class="hero__actions">
+        <a href="#resenas" class="btn btn--white">Reservar mi bici</a>
         <a href="#flota" class="hero__link">Ver la flota →</a>
       </div>
     </div>
@@ -91,7 +105,7 @@
   </section>
 
   <!-- ============ FLOTA / PRODUCTOS ============ -->
-  <section class="section section--dim" id="flota">
+  <section class="section flota-section" id="flota">
     <div class="wrap">
       <div class="section__head reveal">
         <div class="eyebrow">Nuestros productos</div>
@@ -101,36 +115,68 @@
 
       <div class="flota__grid">
 
+        <!-- ELÉCTRICA -->
         <div class="card reveal">
           <img src="img/bicicleta electrica.jpeg" alt="Bicicleta eléctrica" class="card__img">
           <h3>Eléctrica</h3>
-          <p class="card__tag">Para subir a Femés sin despeinarte.</p>
-          <div class="card__price">25€ <small>/ día</small></div>
-          <div class="card__specs">Motor Bosch · Autonomía 60 km · Cambio automático</div>
+          <p class="card__tag">Motor Bosch · Autonomía 60 km · Cambio automático</p>
+          <div class="card__tarifa">
+            <div class="tarifa-row"><span>1 día</span><span class="tarifa-price">25€</span></div>
+            <div class="tarifa-row"><span>3 días</span><span class="tarifa-price">66€</span></div>
+            <div class="tarifa-row"><span>5 días</span><span class="tarifa-price">100€</span></div>
+            <div class="tarifa-row"><span>1 semana</span><span class="tarifa-price">125€</span></div>
+          </div>
         </div>
 
+        <!-- PASEO / MONTAÑA -->
         <div class="card reveal">
           <img src="img/BICI.jpg" alt="Bicicleta de paseo y montaña" class="card__img">
           <h3>Paseo / Montaña</h3>
-          <p class="card__tag">Ligera, con cesta, lista para la playa.</p>
-          <div class="card__price">12€ <small>/ día</small></div>
-          <div class="card__specs">Cesta delantera · Sillín cómodo · Cambio Shimano 7v</div>
+          <p class="card__tag">Cesta delantera · Sillín cómodo · Cambio Shimano 7v</p>
+          <div class="card__tarifa">
+            <div class="tarifa-row"><span>1 hora</span><span class="tarifa-price">5€</span></div>
+            <div class="tarifa-row"><span>2 horas</span><span class="tarifa-price">6€</span></div>
+            <div class="tarifa-row"><span>3 horas</span><span class="tarifa-price">7€</span></div>
+            <div class="tarifa-row"><span>4 horas</span><span class="tarifa-price">8€</span></div>
+            <div class="tarifa-row"><span>1 día</span><span class="tarifa-price">10€</span></div>
+            <div class="tarifa-row"><span>2 días</span><span class="tarifa-price">19€</span></div>
+            <div class="tarifa-row"><span>3 días</span><span class="tarifa-price">25€</span></div>
+            <div class="tarifa-row"><span>1 semana</span><span class="tarifa-price">49€</span></div>
+          </div>
         </div>
 
+        <!-- CARRITOS -->
         <div class="card reveal">
           <img src="img/carrito.jpeg" alt="Carrito" class="card__img">
           <h3>Carritos</h3>
-          <p class="card__tag">Para los caminos de lava y malpaís.</p>
-          <div class="card__price">18€ <small>/ día</small></div>
-          <div class="card__specs">Suspensión delantera · Neumáticos todoterreno · Frenos de disco</div>
+          <p class="card__tag">Vehículos eléctricos y de gasolina para toda la familia</p>
+          <div class="card__tarifa">
+            <div class="tarifa-section">Sport <small>(3 personas + 2 niños)</small></div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">15€</span></div>
+            <div class="tarifa-row tarifa-row--sub"><span>Siguientes horas</span><span class="tarifa-price">10€</span></div>
+            <div class="tarifa-section">E-Sport <small>eléctrico</small></div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">25€</span></div>
+            <div class="tarifa-section">Bus <small>(6 personas + 2 niños)</small></div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">25€</span></div>
+            <div class="tarifa-row tarifa-row--sub"><span>Siguientes horas</span><span class="tarifa-price">15€</span></div>
+            <div class="tarifa-section">E-Bus <small>eléctrico</small></div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">35€</span></div>
+          </div>
         </div>
 
+        <!-- KIDS -->
         <div class="card reveal">
-          <img src="img/Go kart.jpeg" alt="Bicicleta infantil y tándem" class="card__img">
+          <img src="img/Go kart.jpeg" alt="Go kart infantil" class="card__img">
           <h3>Kids</h3>
-          <p class="card__tag">Para rodar en familia, a cualquier ritmo.</p>
-          <div class="card__price">10€ <small>/ día</small></div>
-          <div class="card__specs">Tallas desde 4 años · Tándem disponible · Sillas de bebé opcionales</div>
+          <p class="card__tag">Diversión garantizada para los más pequeños</p>
+          <div class="card__tarifa">
+            <div class="tarifa-section">Go Kart Junior</div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">10€</span></div>
+            <div class="tarifa-row tarifa-row--sub"><span>Siguientes horas</span><span class="tarifa-price">5€</span></div>
+            <div class="tarifa-section">Go Kart Baby</div>
+            <div class="tarifa-row"><span>1ª hora</span><span class="tarifa-price">7€</span></div>
+            <div class="tarifa-row tarifa-row--sub"><span>Siguientes horas</span><span class="tarifa-price">5€</span></div>
+          </div>
         </div>
 
       </div>
@@ -144,30 +190,147 @@
         <div class="eyebrow">Reseñas</div>
         <h2>Lo que dicen nuestros <em>clientes</em>.</h2>
         <p>Más de 200 reseñas en Google. Lee lo que opinan quienes ya han pedaleado con nosotros.</p>
+        <div class="rating-summary">
+          <span class="rating-summary__score">4.9</span>
+          <div class="rating-summary__right">
+            <div class="rating-summary__stars">★★★★★</div>
+            <div class="rating-summary__label">Media en Google · +200 reseñas</div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="resenas__grid reveal">
+    <div class="carousel-outer reveal">
+      <div class="carousel-track" id="carouselTrack">
 
+        <!-- Bloque original de reseñas -->
         <div class="resena-card">
           <div class="resena-card__stars">★★★★★</div>
           <p class="resena-card__text">"Experiencia increíble. Las bicis están en perfecto estado y el trato es excelente. Muy recomendable para explorar el paseo marítimo de Puerto del Carmen."</p>
           <div class="resena-card__autor">— María G.</div>
         </div>
-
         <div class="resena-card">
           <div class="resena-card__stars">★★★★★</div>
           <p class="resena-card__text">"Alquilamos unas bicis eléctricas para toda la familia y fue una aventura genial. Atención rápida y muy amables. ¡Volveremos sin duda!"</p>
           <div class="resena-card__autor">— James T.</div>
         </div>
-
         <div class="resena-card">
           <div class="resena-card__stars">★★★★★</div>
           <p class="resena-card__text">"Perfectas para recorrer la isla. Precio justo, bicis bien mantenidas y ubicación inmejorable en la Avenida de las Playas."</p>
           <div class="resena-card__autor">— Sophie L.</div>
         </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Super servicio, bicis en excelente estado. El personal muy amable y nos dieron consejos geniales sobre las rutas. Totalmente recomendado."</p>
+          <div class="resena-card__autor">— Carlos M.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"We rented e-bikes for 3 days and it was the best decision of our holiday. The staff was super helpful and the bikes were in great condition!"</p>
+          <div class="resena-card__autor">— Anna K.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Muy buena experiencia. Las bicicletas son nuevas, los cascos también. El proceso de alquiler es rapidísimo. Volvería sin dudarlo."</p>
+          <div class="resena-card__autor">— Pedro R.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Fantastique! Nous avons loué des vélos pour toute la famille. Excellent rapport qualité-prix et personnel très sympathique. Bravo!"</p>
+          <div class="resena-card__autor">— Élodie B.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Ubicación perfecta para salir directamente al paseo. La bici eléctrica me permitió subir hasta el mirador sin cansancio. Increíble."</p>
+          <div class="resena-card__autor">— Laura S.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Top experience! The go-karts for the kids were a huge hit. Easy to book, friendly staff and great location right on the beach avenue."</p>
+          <div class="resena-card__autor">— Michael D.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Alquilamos los carritos para los niños y fue un éxito total. Seguridad garantizada y el personal nos explicó todo muy bien. 10/10."</p>
+          <div class="resena-card__autor">— Rosa T.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Wir haben E-Bikes für zwei Tage gemietet. Alles war einwandfrei, das Personal sehr freundlich. Absolute Empfehlung für Lanzarote!"</p>
+          <div class="resena-card__autor">— Klaus W.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"El mejor recuerdo de nuestras vacaciones fue pedalear por el litoral con las bicis de aquí. Precio inmejorable y trato excelente."</p>
+          <div class="resena-card__autor">— Lucía F.</div>
+        </div>
+
+        <!-- Duplicado para loop infinito -->
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Experiencia increíble. Las bicis están en perfecto estado y el trato es excelente. Muy recomendable para explorar el paseo marítimo de Puerto del Carmen."</p>
+          <div class="resena-card__autor">— María G.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Alquilamos unas bicis eléctricas para toda la familia y fue una aventura genial. Atención rápida y muy amables. ¡Volveremos sin duda!"</p>
+          <div class="resena-card__autor">— James T.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Perfectas para recorrer la isla. Precio justo, bicis bien mantenidas y ubicación inmejorable en la Avenida de las Playas."</p>
+          <div class="resena-card__autor">— Sophie L.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Super servicio, bicis en excelente estado. El personal muy amable y nos dieron consejos geniales sobre las rutas. Totalmente recomendado."</p>
+          <div class="resena-card__autor">— Carlos M.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"We rented e-bikes for 3 days and it was the best decision of our holiday. The staff was super helpful and the bikes were in great condition!"</p>
+          <div class="resena-card__autor">— Anna K.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Muy buena experiencia. Las bicicletas son nuevas, los cascos también. El proceso de alquiler es rapidísimo. Volvería sin dudarlo."</p>
+          <div class="resena-card__autor">— Pedro R.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Fantastique! Nous avons loué des vélos pour toute la famille. Excellent rapport qualité-prix et personnel très sympathique. Bravo!"</p>
+          <div class="resena-card__autor">— Élodie B.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Ubicación perfecta para salir directamente al paseo. La bici eléctrica me permitió subir hasta el mirador sin cansancio. Increíble."</p>
+          <div class="resena-card__autor">— Laura S.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Top experience! The go-karts for the kids were a huge hit. Easy to book, friendly staff and great location right on the beach avenue."</p>
+          <div class="resena-card__autor">— Michael D.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Alquilamos los carritos para los niños y fue un éxito total. Seguridad garantizada y el personal nos explicó todo muy bien. 10/10."</p>
+          <div class="resena-card__autor">— Rosa T.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"Wir haben E-Bikes für zwei Tage gemietet. Alles war einwandfrei, das Personal sehr freundlich. Absolute Empfehlung für Lanzarote!"</p>
+          <div class="resena-card__autor">— Klaus W.</div>
+        </div>
+        <div class="resena-card">
+          <div class="resena-card__stars">★★★★★</div>
+          <p class="resena-card__text">"El mejor recuerdo de nuestras vacaciones fue pedalear por el litoral con las bicis de aquí. Precio inmejorable y trato excelente."</p>
+          <div class="resena-card__autor">— Lucía F.</div>
+        </div>
 
       </div>
+    </div>
 
+    <div class="wrap">
       <div class="resenas__cta reveal">
         <a href="https://www.google.com/maps/search/EasyBike+Lanzarote" target="_blank" rel="noopener" class="btn btn--solid">Ver todas las reseñas en Google</a>
       </div>
@@ -191,24 +354,27 @@
             referrerpolicy="no-referrer-when-downgrade" title="Mapa ubicación EasyBike Puerto del Carmen">
           </iframe>
         </div>
-        <div class="ubicacion__info">
-          <div class="ubicacion__dato">
-            <strong>Dirección</strong>
-            <span>Avenida de las Playas, Puerto del Carmen<br>Lanzarote, Islas Canarias</span>
+        <div class="ubicacion__lateral">
+          <img src="img/onetwo.jpg" alt="Local EasyBike en Puerto del Carmen" class="ubicacion__foto">
+          <div class="ubicacion__info">
+            <div class="ubicacion__dato">
+              <strong>Dirección</strong>
+              <span>Avenida de las Playas, Puerto del Carmen<br>Lanzarote, Islas Canarias</span>
+            </div>
+            <div class="ubicacion__dato">
+              <strong>Horario</strong>
+              <span>Todos los días · 9:00 – 19:00</span>
+            </div>
+            <div class="ubicacion__dato">
+              <strong>Teléfono</strong>
+              <span><a href="tel:+34667210728">667 210 728</a></span>
+            </div>
+            <div class="ubicacion__dato">
+              <strong>Email</strong>
+              <span><a href="mailto:hola@olayroca.com">hola@olayroca.com</a></span>
+            </div>
+            <a href="https://www.google.com/maps/search/EasyBike+Lanzarote" target="_blank" rel="noopener" class="btn btn--solid" style="margin-top:8px;">Cómo llegar →</a>
           </div>
-          <div class="ubicacion__dato">
-            <strong>Horario</strong>
-            <span>Todos los días · 9:00 – 19:00</span>
-          </div>
-          <div class="ubicacion__dato">
-            <strong>Teléfono</strong>
-            <span><a href="tel:+34600000000">+34 600 000 000</a></span>
-          </div>
-          <div class="ubicacion__dato">
-            <strong>Email</strong>
-            <span><a href="mailto:hola@olayroca.com">hola@olayroca.com</a></span>
-          </div>
-          <a href="https://www.google.com/maps/search/EasyBike+Lanzarote" target="_blank" rel="noopener" class="btn btn--solid" style="margin-top:8px;">Cómo llegar →</a>
         </div>
       </div>
     </div>
@@ -219,7 +385,7 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <div class="footer__brand">OLA <span>&amp;</span> ROCA</div>
+          <div class="footer__brand">EASYBIKE</div>
           <p>Alquiler de bicicletas en Lanzarote. Bicis revisadas a mano, recogida en toda la costa y rutas que conocemos como la palma de la mano.</p>
         </div>
         <div>
@@ -234,7 +400,7 @@
         <div>
           <h4>Contacto</h4>
           <div class="footer__list">
-            <a href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a>
+            <a href="tel:+34667210728">667 210 728</a>
             <a href="mailto:hola@olayroca.com">hola@olayroca.com</a>
             <a href="#">Puerto del Carmen, Lanzarote</a>
           </div>
@@ -250,7 +416,19 @@
     </div>
   </footer>
 
+  <!-- Botón flotante llamada -->
+  <a href="tel:+34667210728" class="float-call" aria-label="Llamar a EasyBike">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+
   <script src="js/script.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.getElementById('loaderOverlay').classList.add('hidden');
+      }, 1000);
+    });
+  </script>
 
 </body>
 </html>
