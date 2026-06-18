@@ -169,24 +169,24 @@
     position: relative;
     margin-top: 76px;
     overflow:hidden;
-    background: linear-gradient(180deg, #EFE9D8 0%, #BFE3DD 38%, var(--turquoise) 70%, var(--turquoise-deep) 100%);
+    background: var(--volcanic);
     min-height: 92vh;
     display:flex;
     align-items:center;
   }
-  .hero__cloud{
+  .hero__bg-img{
     position:absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.55);
-    filter: blur(2px);
+    inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position: center;
+    display:block;
   }
-  .hero__cloud--1{ width:160px; height:46px; top:14%; left:8%; animation: drift 38s linear infinite; }
-  .hero__cloud--2{ width:120px; height:36px; top:22%; left:62%; animation: drift 50s linear infinite reverse; }
-  .hero__cloud--3{ width:90px; height:28px; top:9%; left:40%; animation: drift 44s linear infinite; }
-  @keyframes drift{
-    0%{ transform: translateX(0); }
-    50%{ transform: translateX(40px); }
-    100%{ transform: translateX(0); }
+  .hero__overlay{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(20,19,15,0.75) 100%);
+    z-index:2;
   }
 
   .hero__content{
@@ -195,16 +195,16 @@
     padding: 120px 0 0;
     width:100%;
   }
-  .hero__eyebrow{ color: var(--deepsea); margin-bottom: 22px; }
+  .hero__eyebrow{ color: var(--cream); margin-bottom: 22px; opacity: 0.85; }
   .hero__title{
     font-size: clamp(40px, 6vw, 74px);
     line-height: 1.05;
     max-width: 880px;
-    color: var(--volcanic);
+    color: var(--cream);
   }
   .hero__title em{
     font-style: italic;
-    color: var(--deepsea);
+    color: var(--sand);
     font-weight: 500;
   }
   .hero__sub{
@@ -212,7 +212,7 @@
     max-width: 520px;
     font-size: 18px;
     line-height: 1.55;
-    color: var(--volcanic-soft);
+    color: rgba(250,246,236,0.85);
   }
   .hero__actions{
     margin-top: 38px;
@@ -222,7 +222,8 @@
   }
   .hero__link{
     font-weight: 600;
-    border-bottom: 2px solid var(--volcanic);
+    color: var(--cream);
+    border-bottom: 2px solid var(--cream);
     padding-bottom: 4px;
     transition: opacity .2s ease;
   }
@@ -299,13 +300,19 @@
   .nosotros__art{
     background: var(--volcanic);
     border-radius: var(--radius);
-    padding: 36px;
+    padding: 0;
     position: relative;
     overflow:hidden;
   }
-  .nosotros__art svg{ width:100%; }
+  .nosotros__photo{
+    width:100%;
+    height: 340px;
+    object-fit: cover;
+    display:block;
+  }
   .nosotros__quote{
-    margin-top: 22px;
+    padding: 22px 36px 28px;
+    margin-top: 0;
     color: var(--cream);
     font-family: var(--display);
     font-style: italic;
@@ -346,6 +353,14 @@
     color: var(--deepsea);
     margin-bottom: 22px;
   }
+  .card__img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+    display:block;
+  }
   .card h3{
     font-size: 20px;
     margin-bottom: 8px;
@@ -377,113 +392,83 @@
     line-height: 1.8;
   }
 
-  /* ============ RESERVAS (dark / cave) ============ */
-  .reservas{
-    background: var(--cave);
-    color: var(--cream);
-    position: relative;
-  }
-  .reservas::before{
-    content:"";
-    position:absolute; inset:0;
-    background: radial-gradient(ellipse 60% 50% at 80% 0%, rgba(31,156,139,0.18), transparent 60%);
-    pointer-events:none;
-  }
-  .reservas .section__head .eyebrow{ color: var(--turquoise); }
-  .reservas .section__head h2{ color: var(--cream); }
-  .reservas .section__head p{ color: rgba(250,246,236,0.7); margin-top: 16px; font-size: 16.5px; line-height: 1.6; }
-
-  .reservas__grid{
+  /* ============ RESEÑAS ============ */
+  .resenas__grid{
     display:grid;
-    grid-template-columns: 1.3fr 0.9fr;
-    gap: 56px;
-    position:relative;
-    z-index:2;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
   }
-
-  .field{
-    margin-bottom: 20px;
-  }
-  .field--row{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-  .field label{
-    display:block;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: rgba(250,246,236,0.65);
-    margin-bottom: 8px;
-  }
-  .field input, .field select, .field textarea{
-    width:100%;
-    background: rgba(250,246,236,0.06);
-    border: 1px solid rgba(250,246,236,0.25);
+  .resena-card{
+    background: white;
+    border: 1px solid rgba(20,19,15,0.10);
     border-radius: var(--radius);
-    padding: 13px 14px;
-    color: var(--cream);
-    font-family: var(--body);
-    font-size: 15px;
-  }
-  .field input::placeholder, .field textarea::placeholder{ color: rgba(250,246,236,0.4); }
-  .field select option{ color: var(--volcanic); }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline: none;
-    border-color: var(--turquoise);
-    background: rgba(250,246,236,0.1);
-  }
-  .form-reservas__submit{ margin-top: 8px; }
-
-  .reservas__confirm{
-    display:none;
-    border: 1px solid var(--turquoise);
-    background: rgba(31,156,139,0.12);
-    border-radius: var(--radius);
-    padding: 26px;
-    margin-top: 22px;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .reservas__confirm.is-active{ display:block; }
-  .reservas__confirm strong{ color: var(--turquoise); }
-
-  .reservas__side{
-    background: rgba(250,246,236,0.05);
-    border: 1px solid rgba(250,246,236,0.15);
-    border-radius: var(--radius);
-    padding: 32px;
-    align-self:start;
-  }
-  .reservas__side h3{
-    font-size: 18px;
-    margin-bottom: 18px;
-    color: var(--sand);
-  }
-  .reservas__contact{
+    padding: 28px 26px;
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap: 14px;
+    box-shadow: 0 4px 16px rgba(20,19,15,0.06);
+  }
+  .resena-card__stars{
+    color: #f5a623;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .resena-card__text{
     font-size: 15px;
+    line-height: 1.65;
+    color: var(--volcanic-soft);
+    flex:1;
   }
-  .reservas__contact a{ font-weight:600; }
-  .reservas__contact a:hover{ color: var(--turquoise); }
-  .reservas__contact small{
+  .resena-card__autor{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--turquoise-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .resenas__cta{
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  /* ============ UBICACIÓN ============ */
+  .ubicacion__grid{
+    display:grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 48px;
+    align-items:start;
+  }
+  .ubicacion__mapa iframe{
+    width:100%;
+    height:420px;
+    border:0;
+    border-radius: var(--radius);
     display:block;
-    color: rgba(250,246,236,0.55);
+  }
+  .ubicacion__info{
+    display:flex;
+    flex-direction:column;
+    gap: 24px;
+  }
+  .ubicacion__dato{
+    display:flex;
+    flex-direction:column;
+    gap: 5px;
+  }
+  .ubicacion__dato strong{
     font-size: 12.5px;
-    margin-top: 2px;
-    font-weight:400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--turquoise-deep);
+    font-weight: 700;
   }
-  .reservas__hours{
-    margin-top: 26px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(250,246,236,0.15);
-    font-size: 14px;
-    color: rgba(250,246,236,0.7);
-    line-height: 1.7;
+  .ubicacion__dato span, .ubicacion__dato a{
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--volcanic-soft);
   }
+  .ubicacion__dato a:hover{ color: var(--turquoise-deep); }
 
   /* ============ FOOTER ============ */
   .footer{
