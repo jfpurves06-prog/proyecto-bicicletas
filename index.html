@@ -81,6 +81,7 @@
         <a href="#flota">Flota</a>
         <a href="#resenas">Reseñas</a>
         <a href="#ubicacion">Ubicación</a>
+        <a href="#asistente">Asistente</a>
       </nav>
       <div class="nav__actions">
         <a href="tel:+34667210728" class="btn btn--ghost">Reservar</a>
@@ -421,6 +422,31 @@
   </section>
 
   <!-- ============ FOOTER ============ -->
+  <!-- ============ ASISTENTE IA ============ -->
+  <section class="section section--cream" id="asistente">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <div class="eyebrow">Asistente EasyBike</div>
+        <h2>¿Tienes alguna <em>pregunta</em>?</h2>
+        <p>Nuestro asistente conoce todo sobre EasyBike. Pregúntale sobre precios, horarios, productos o cómo llegar.</p>
+      </div>
+
+      <div class="chat-box reveal">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg chat-msg--bot">
+            <div class="chat-msg__bubble">¡Hola! Soy el asistente de EasyBike 🚲 ¿En qué puedo ayudarte? Puedes preguntarme sobre precios, horarios, nuestros productos o cómo encontrarnos.</div>
+          </div>
+        </div>
+        <form class="chat-form" id="chatForm">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off" required>
+          <button type="submit" class="chat-send" id="chatSend" aria-label="Enviar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="wrap">
       <div class="footer__grid">
@@ -462,10 +488,147 @@
 
   <script src="js/script.js"></script>
   <script>
+    /* ── Pantalla de carga ── */
     window.addEventListener('load', function () {
       setTimeout(function () {
         document.getElementById('loaderOverlay').classList.add('hidden');
       }, 1000);
+    });
+
+    /* ══════════════════════════════════════════
+       ASISTENTE IA — EasyBike
+       Pon tu API Key de OpenAI aquí abajo:
+    ══════════════════════════════════════════ */
+    const OPENAI_API_KEY = 'AQUI_TU_API_KEY';
+
+    const SYSTEM_PROMPT = `
+Eres el asistente virtual de EasyBike, una empresa de alquiler de bicicletas y vehículos de ocio situada en Lanzarote.
+Responde siempre en el idioma en que te hablen. Sé amable, cercano y conciso.
+Si no sabes algo, di que pueden llamar al 667 210 728.
+
+=== INFORMACIÓN DE LA EMPRESA ===
+Nombre: EasyBike
+Dirección: Av. de las Playas, 100A, 35510 Tías, Las Palmas (Puerto del Carmen, Lanzarote)
+Teléfono: 667 210 728
+Horario: Lunes a sábado 9:30–18:00. Domingos cerrado.
+Fundada: 2020
+Flota: más de 80 vehículos
+Valoración Google: 4,6 ⭐ (43 reseñas)
+
+=== PRODUCTOS Y TARIFAS ===
+
+🚲 BICICLETA ELÉCTRICA — Para moverte sin sudar una gota.
+  1 día   → 25 €
+  3 días  → 66 €
+  5 días  → 100 €
+  1 semana → 125 €
+
+🚲 BICICLETA PASEO / MONTAÑA
+  1 hora  → 5 €
+  2 horas → 6 €
+  3 horas → 7 €
+  4 horas → 8 €
+  1 día   → 10 €
+  2 días  → 19 €
+  3 días  → 25 €
+  1 semana → 49 €
+
+🛺 CARRITOS (2 a 4 personas, opción eléctrico)
+  Sport (3 personas + 2 niños) — 1ª hora 15 €, siguientes 10 €
+  E-Sport eléctrico           — 1ª hora 25 €
+  Bus (6 personas + 2 niños)  — 1ª hora 25 €, siguientes 15 €
+  E-Bus eléctrico             — 1ª hora 35 €
+
+🏎️ KIDS — Go kart con pedales para niños
+  Go Kart Junior — 1ª hora 10 €, siguientes 5 €
+  Go Kart Baby   — 1ª hora 7 €,  siguientes 5 €
+
+=== SOBRE NOSOTROS ===
+Fundada en 2020 en plena Avenida de las Playas de Puerto del Carmen.
+Contamos con una flota de más de 80 bicis de varios tipos.
+Ubicados en el corazón marítimo de Puerto del Carmen, con acceso directo al paseo litoral.
+`.trim();
+
+    const chatForm     = document.getElementById('chatForm');
+    const chatInput    = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatSend     = document.getElementById('chatSend');
+
+    /* Historial de mensajes para la API */
+    const history = [];
+
+    function addMessage(role, text) {
+      const wrap = document.createElement('div');
+      wrap.className = 'chat-msg chat-msg--' + (role === 'user' ? 'user' : 'bot');
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-msg__bubble';
+      bubble.textContent = text;
+      wrap.appendChild(bubble);
+      chatMessages.appendChild(wrap);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addTyping() {
+      const wrap = document.createElement('div');
+      wrap.className = 'chat-msg chat-msg--bot chat-msg--typing';
+      wrap.id = 'typingIndicator';
+      wrap.innerHTML = '<div class="chat-msg__bubble"><span></span><span></span><span></span></div>';
+      chatMessages.appendChild(wrap);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function removeTyping() {
+      const t = document.getElementById('typingIndicator');
+      if (t) t.remove();
+    }
+
+    chatForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      addMessage('user', text);
+      history.push({ role: 'user', content: text });
+      chatInput.value = '';
+      chatSend.disabled = true;
+      addTyping();
+
+      try {
+        const res = await fetch('https://api.openai.com/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + OPENAI_API_KEY
+          },
+          body: JSON.stringify({
+            model: 'gpt-4o-mini',
+            messages: [
+              { role: 'system', content: SYSTEM_PROMPT },
+              ...history
+            ],
+            max_tokens: 400,
+            temperature: 0.7
+          })
+        });
+
+        const data = await res.json();
+
+        if (data.error) {
+          removeTyping();
+          addMessage('bot', '⚠️ Error: ' + data.error.message);
+        } else {
+          const reply = data.choices[0].message.content.trim();
+          history.push({ role: 'assistant', content: reply });
+          removeTyping();
+          addMessage('bot', reply);
+        }
+      } catch (err) {
+        removeTyping();
+        addMessage('bot', 'No he podido conectar. Llámanos al 667 210 728 y te ayudamos.');
+      }
+
+      chatSend.disabled = false;
+      chatInput.focus();
     });
   </script>
 
