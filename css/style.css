@@ -598,6 +598,34 @@
     margin-top: 4px;
   }
 
+  /* ============ LANG SELECTOR ============ */
+  .lang-selector{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .lang-btn{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--volcanic);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+    letter-spacing: 0.05em;
+  }
+  .lang-btn:hover{
+    background: var(--volcanic);
+    color: var(--cream);
+  }
+  .lang-btn.active{
+    background: var(--volcanic);
+    color: var(--sand);
+    border-color: var(--volcanic);
+  }
+
   /* ============ FLOAT CHAT BUTTON ============ */
   .float-chat{
     position: fixed;
