@@ -399,6 +399,9 @@
     margin-bottom: 22px;
     display:block;
   }
+  .card__img--contain{
+    object-fit: contain;
+  }
   .card h3{
     font-size: 20px;
     margin-bottom: 8px;
@@ -593,6 +596,32 @@
     font-size: 13px;
     color: var(--volcanic-soft);
     margin-top: 4px;
+  }
+
+  /* ============ FLOAT CHAT BUTTON ============ */
+  .float-chat{
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 200;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--turquoise);
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 4px 20px rgba(31,156,139,0.45);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .float-chat:hover{
+    transform: scale(1.10);
+    box-shadow: 0 6px 28px rgba(31,156,139,0.55);
+  }
+  .float-chat svg{
+    width: 28px;
+    height: 28px;
   }
 
   /* ============ FLOAT CALL BUTTON ============ */
